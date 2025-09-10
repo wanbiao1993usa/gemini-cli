@@ -135,15 +135,42 @@ export async function createContentGenerator(
     config.authType === AuthType.USE_VERTEX_AI
   ) {
     let headers: Record<string, string> = { ...baseHeaders };
+    const baseUrl = process.env["BASE_URL"] as string;
+    const apiLyciumKey = process.env["X_API_KEY"] as string;
+
+    // console.log("baseUrl",baseUrl);
+    // console.log("apiLyciumKey",apiLyciumKey);
+
+    if ((apiLyciumKey && !baseUrl) || (!apiLyciumKey && baseUrl)) {
+      console.error("❌ 环境变量配置不完整，请同时设置 BASE_URL 和 X_API_KEY，或同时留空");
+    }
+
     if (gcConfig?.getUsageStatisticsEnabled()) {
       const installationManager = new InstallationManager();
       const installationId = installationManager.getInstallationId();
-      headers = {
-        ...headers,
-        'x-gemini-api-privileged-user-id': `${installationId}`,
-      };
+      if(apiLyciumKey && baseUrl){
+        headers = {
+          ...headers,
+          'x-gemini-api-privileged-user-id': `${installationId}`,
+          'x-api-key': apiLyciumKey,
+        };
+      }else{
+        headers = {
+          ...headers,
+          'x-gemini-api-privileged-user-id': `${installationId}`,
+        };
+      }
+
     }
-    const httpOptions = { headers };
+    let httpOptions = {};
+    if(apiLyciumKey && baseUrl){
+      httpOptions = { headers,
+        baseUrl: baseUrl,
+       };
+    }else{
+      httpOptions = { headers}
+     }
+
 
     const googleGenAI = new GoogleGenAI({
       apiKey: config.apiKey === '' ? undefined : config.apiKey,
