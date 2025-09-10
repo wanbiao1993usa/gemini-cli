@@ -25,7 +25,7 @@ Gemini CLI 是一个开源的 AI Agent，它把 Gemini 的能力直接带到你�
 #### Run instantly with npx
 
 ```bash
-npm install -g 下载软件包
+npm install -g 下载软件包.tgz
 
 #建立环境变量,否则无法运行
 export GOOGLE_CLOUD_PROJECT=cande-470907
@@ -61,4 +61,10 @@ https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=http%3A%2F%2Flocalhost
 Waiting for authentication...
 
 ## 解决办法，删除~/.gemini/settings.json
+```
+
+### 2.windows在UI中设置环境变量不生效
+
+```
+## 解决办法，重启一下机器
 ```
