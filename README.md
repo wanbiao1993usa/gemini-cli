@@ -43,3 +43,22 @@ gemini
 [官方库](https://github.com/google-gemini/gemini-cli "官方库")
 
 [官方教程](https://codelabs.developers.google.com/gemini-cli-hands-on?hl=zh-cn#0 "官方教程")
+
+## 常见错误
+
+### 1.曾经选择了错误的登录方式
+```
+PS E:\workexternal\90 gitproject> gemini
+
+
+Code Assist login required.
+Attempting to open authentication page in your browser.
+Otherwise navigate to:
+
+https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=http%3A%2F%2Flocalhost%3A55259%2Foauth2callback&access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile&state=59f599ff8b645023276b2c976103b7acc824174e8572a6d938f3cd3f1b5b3342&response_type=code&client_id=681255809395-oo8ft2oprdrnp9e3aqf6av3hmdib135j.apps.googleusercontent.com
+
+
+Waiting for authentication...
+
+## 解决办法，删除~/.gemini/settings.json
+```
