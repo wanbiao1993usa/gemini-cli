@@ -39,7 +39,7 @@ export GOOGLE_GENAI_NO_AUTH=true
 gemini
 
 ```
-
+## 其他学习资料
 [官方库](https://github.com/google-gemini/gemini-cli "官方库")
 
 [官方教程](https://codelabs.developers.google.com/gemini-cli-hands-on?hl=zh-cn#0 "官方教程")
