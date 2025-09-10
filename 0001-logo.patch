@@ -1,0 +1,144 @@
+From 633f2f85a3e668e81c0bce3a95efa46089a64cb4 Mon Sep 17 00:00:00 2001
+From: wanbiao <wanbiao1993usa@gmail.com>
+Date: Tue, 9 Sep 2025 14:32:13 +0800
+Subject: [PATCH] =?UTF-8?q?=E5=A2=9E=E5=8A=A0=E4=B8=AD=E6=96=87=E6=8F=90?=
+ =?UTF-8?q?=E7=A4=BA=E5=92=8C=E5=85=AC=E5=8F=B8logo?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ packages/cli/src/ui/components/AsciiArt.ts | 72 ++++++++++++++--------
+ packages/cli/src/ui/components/Tips.tsx    | 12 ++--
+ 2 files changed, 54 insertions(+), 30 deletions(-)
+
+diff --git a/packages/cli/src/ui/components/AsciiArt.ts b/packages/cli/src/ui/components/AsciiArt.ts
+index 79eb522c..f08528e7 100644
+--- a/packages/cli/src/ui/components/AsciiArt.ts
++++ b/packages/cli/src/ui/components/AsciiArt.ts
+@@ -4,35 +4,59 @@
+  * SPDX-License-Identifier: Apache-2.0
+  */
+ 
++// export const shortAsciiLogo = `
++//    █████████  ██████████ ██████   ██████ █████ ██████   █████ █████
++//   ███░░░░░███░░███░░░░░█░░██████ ██████ ░░███ ░░██████ ░░███ ░░███
++//  ███     ░░░  ░███  █ ░  ░███░█████░███  ░███  ░███░███ ░███  ░███
++// ░███          ░██████    ░███░░███ ░███  ░███  ░███░░███░███  ░███
++// ░███    █████ ░███░░█    ░███ ░░░  ░███  ░███  ░███ ░░██████  ░███
++// ░░███  ░░███  ░███ ░   █ ░███      ░███  ░███  ░███  ░░█████  ░███
++//  ░░█████████  ██████████ █████     █████ █████ █████  ░░█████ █████
++//   ░░░░░░░░░  ░░░░░░░░░░ ░░░░░     ░░░░░ ░░░░░ ░░░░░    ░░░░░ ░░░░░
++// `;
++
++// export const longAsciiLogo = `
++//  ███            █████████  ██████████ ██████   ██████ █████ ██████   █████ █████
++// ░░░███         ███░░░░░███░░███░░░░░█░░██████ ██████ ░░███ ░░██████ ░░███ ░░███
++//   ░░░███      ███     ░░░  ░███  █ ░  ░███░█████░███  ░███  ░███░███ ░███  ░███
++//     ░░░███   ░███          ░██████    ░███░░███ ░███  ░███  ░███░░███░███  ░███
++//      ███░    ░███    █████ ░███░░█    ░███ ░░░  ░███  ░███  ░███ ░░██████  ░███
++//    ███░      ░░███  ░░███  ░███ ░   █ ░███      ░███  ░███  ░███  ░░█████  ░███
++//  ███░         ░░█████████  ██████████ █████     █████ █████ █████  ░░█████ █████
++// ░░░            ░░░░░░░░░  ░░░░░░░░░░ ░░░░░     ░░░░░ ░░░░░ ░░░░░    ░░░░░ ░░░░░
++// `;
++
++// export const tinyAsciiLogo = `
++//  ███         █████████ 
++// ░░░███      ███░░░░░███
++//   ░░░███   ███     ░░░ 
++//     ░░░███░███         
++//      ███░ ░███    █████
++//    ███░   ░░███  ░░███ 
++//  ███░      ░░█████████ 
++// ░░░         ░░░░░░░░░  
++// `;
++
+ export const shortAsciiLogo = `
+-   █████████  ██████████ ██████   ██████ █████ ██████   █████ █████
+-  ███░░░░░███░░███░░░░░█░░██████ ██████ ░░███ ░░██████ ░░███ ░░███
+- ███     ░░░  ░███  █ ░  ░███░█████░███  ░███  ░███░███ ░███  ░███
+-░███          ░██████    ░███░░███ ░███  ░███  ░███░░███░███  ░███
+-░███    █████ ░███░░█    ░███ ░░░  ░███  ░███  ░███ ░░██████  ░███
+-░░███  ░░███  ░███ ░   █ ░███      ░███  ░███  ░███  ░░█████  ░███
+- ░░█████████  ██████████ █████     █████ █████ █████  ░░█████ █████
+-  ░░░░░░░░░  ░░░░░░░░░░ ░░░░░     ░░░░░ ░░░░░ ░░░░░    ░░░░░ ░░░░░
++██      ██    ██  ██████ ██ ██    ██ ███    ███ 
++██       ██  ██  ██      ██ ██    ██ ████  ████ 
++██        ████   ██      ██ ██    ██ ██ ████ ██ 
++██         ██    ██      ██ ██    ██ ██  ██  ██ 
++███████    ██     ██████ ██  ██████  ██      ██ 
+ `;
+ 
+ export const longAsciiLogo = `
+- ███            █████████  ██████████ ██████   ██████ █████ ██████   █████ █████
+-░░░███         ███░░░░░███░░███░░░░░█░░██████ ██████ ░░███ ░░██████ ░░███ ░░███
+-  ░░░███      ███     ░░░  ░███  █ ░  ░███░█████░███  ░███  ░███░███ ░███  ░███
+-    ░░░███   ░███          ░██████    ░███░░███ ░███  ░███  ░███░░███░███  ░███
+-     ███░    ░███    █████ ░███░░█    ░███ ░░░  ░███  ░███  ░███ ░░██████  ░███
+-   ███░      ░░███  ░░███  ░███ ░   █ ░███      ░███  ░███  ░███  ░░█████  ░███
+- ███░         ░░█████████  ██████████ █████     █████ █████ █████  ░░█████ █████
+-░░░            ░░░░░░░░░  ░░░░░░░░░░ ░░░░░     ░░░░░ ░░░░░ ░░░░░    ░░░░░ ░░░░░
++██      ██    ██  ██████ ██ ██    ██ ███    ███     █████  ██ 
++██       ██  ██  ██      ██ ██    ██ ████  ████    ██   ██ ██ 
++██        ████   ██      ██ ██    ██ ██ ████ ██    ███████ ██ 
++██         ██    ██      ██ ██    ██ ██  ██  ██    ██   ██ ██ 
++███████    ██     ██████ ██  ██████  ██      ██ ██ ██   ██ ██ 
+ `;
+ 
+ export const tinyAsciiLogo = `
+- ███         █████████ 
+-░░░███      ███░░░░░███
+-  ░░░███   ███     ░░░ 
+-    ░░░███░███         
+-     ███░ ░███    █████
+-   ███░   ░░███  ░░███ 
+- ███░      ░░█████████ 
+-░░░         ░░░░░░░░░  
++██      
++██      
++██      
++██      
++███████  
+ `;
+diff --git a/packages/cli/src/ui/components/Tips.tsx b/packages/cli/src/ui/components/Tips.tsx
+index 7fb9431c..49290aa4 100644
+--- a/packages/cli/src/ui/components/Tips.tsx
++++ b/packages/cli/src/ui/components/Tips.tsx
+@@ -17,20 +17,20 @@ export const Tips: React.FC<TipsProps> = ({ config }) => {
+   const geminiMdFileCount = config.getGeminiMdFileCount();
+   return (
+     <Box flexDirection="column">
+-      <Text color={Colors.Foreground}>Tips for getting started:</Text>
++      <Text color={Colors.Foreground}>开始的小建议:</Text>
+       <Text color={Colors.Foreground}>
+-        1. Ask questions, edit files, or run commands.
++        1. 提问，编辑文件，运行命令.
+       </Text>
+       <Text color={Colors.Foreground}>
+-        2. Be specific for the best results.
++        2. 请尽可能具体，以获得最佳效果.
+       </Text>
+       {geminiMdFileCount === 0 && (
+         <Text color={Colors.Foreground}>
+-          3. Create{' '}
++          3. 创建{' '}
+           <Text bold color={Colors.AccentPurple}>
+             GEMINI.md
+           </Text>{' '}
+-          files to customize your interactions with Gemini.
++          用于自定义你与 Gemini 交互的文件.
+         </Text>
+       )}
+       <Text color={Colors.Foreground}>
+@@ -38,7 +38,7 @@ export const Tips: React.FC<TipsProps> = ({ config }) => {
+         <Text bold color={Colors.AccentPurple}>
+           /help
+         </Text>{' '}
+-        for more information.
++        获取更多的帮助
+       </Text>
+     </Box>
+   );
+-- 
+2.47.0
+
