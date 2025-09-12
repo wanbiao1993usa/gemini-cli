@@ -38,7 +38,7 @@ export const Tips: React.FC<TipsProps> = ({ config }) => {
         <Text bold color={theme.text.accent}>
           /help
         </Text>{' '}
-        for more information.
+        获取更多的帮助
       </Text>
     </Box>
   );

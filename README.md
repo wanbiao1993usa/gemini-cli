@@ -5,18 +5,19 @@
 [![Version](https://img.shields.io/npm/v/@google/gemini-cli)](https://www.npmjs.com/package/@google/gemini-cli)
 [![License](https://img.shields.io/github/license/google-gemini/gemini-cli)](https://github.com/google-gemini/gemini-cli/blob/main/LICENSE)
 
-![Gemini CLI Screenshot](./docs/assets/gemini-screenshot.png)
+![Gemini CLI Screenshot](./docs/assets/lycium.ai-screenshot.png)
 
-Gemini CLI is an open-source AI agent that brings the power of Gemini directly into your terminal. It provides lightweight access to Gemini, giving you the most direct path from your prompt to our model.
+Gemini CLI 是一个开源的 AI Agent，它把 Gemini 的能力直接带到你的终端。它提供了轻量级的访问方式，让你能够以最直接的路径，从命令行提示符连接到我们的模型。
 
 ## 🚀 Why Gemini CLI?
 
-- **🎯 Free tier**: 60 requests/min and 1,000 requests/day with personal Google account
-- **🧠 Powerful Gemini 2.5 Pro**: Access to 1M token context window
-- **🔧 Built-in tools**: Google Search grounding, file operations, shell commands, web fetching
-- **🔌 Extensible**: MCP (Model Context Protocol) support for custom integrations
-- **💻 Terminal-first**: Designed for developers who live in the command line
-- **🛡️ Open source**: Apache 2.0 licensed
+🚀 Gemini CLI 国内节点发布！
+我们将 Gemini CLI 与 Vertex AI 完美接入自建节点，为中国用户提供真正的 原生体验：
+ -	⚡ 原生直连：无需翻墙，直接在终端使用 Gemini，像本地工具一样顺畅。
+ -	🏎 高性能：专为中国网络环境优化，响应更快，延迟更低。
+ - 	💡 完全免费：对中国用户开放，无需额外费用，即刻上手。
+
+从命令行到 Gemini 模型，一步直达，畅享 AI 助手带来的高效开发体验！
 
 ## 📦 Installation
 
